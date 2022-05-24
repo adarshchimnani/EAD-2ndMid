@@ -1,0 +1,41 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+
+  <div class="box">
+
+    <% newListPeople.forEach(function(person){ %>
+      <form action="/registeredUsers" method="post">
+        <div class="item">
+          <!-- <input type= > -->
+
+          <p>
+            <%= person.name %>
+            <%= person.email %>
+            <%= person.number %>
+            <%= person.country%>
+            <%= person.state %>
+            <%= person.city %>
+            <%= person.address %>
+            <%= person.zipCode %>
+          </p>
+        </div>
+      </form>
+      <% }) %>
+
+
+        <!-- <% for (let i=0; i<newListPeople.length; i++) { %>
+
+          <% } %>
+
+            <form class="item" action="/" method="post">
+              <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+              <button type="submit" name="list">+</button>
+            </form> -->
+  </div>
+
+  <%- include("footer") -%>
