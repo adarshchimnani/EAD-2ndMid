@@ -11,8 +11,7 @@
     <% newListPeople.forEach(function(person){ %>
       <form action="/registeredUsers" method="post">
         <div class="item">
-          <!-- <input type= > -->
-
+          <input type="checkbox" name="checkbox" value="<%=person._id %>" onChange="this.form.submit()">
           <p>
             <%= person.name %> <br>
             <%= person.email %> <br>
@@ -27,7 +26,7 @@
       </form>
       <% }) %>
 
-
+     
         <!-- <% for (let i=0; i<newListPeople.length; i++) { %>
 
           <% } %>

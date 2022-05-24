@@ -103,6 +103,16 @@ app.post("/registeredUsers", function (req, res) {
   });
 
 
+  app.post("/registeredUsers", function (req, res) {
+    const checkedItemId = req.body.checkbox;
+  
+    Person.findByIdAndRemove(checkedItemId, function (err) {
+      if (!err)
+        console.log("Successfully Deleted Item!")
+      res.redirect("/registeredUsers")
+    });
+  })
+
 app.listen(3000, function () {
     console.log("Server started on port 3000");
   });
